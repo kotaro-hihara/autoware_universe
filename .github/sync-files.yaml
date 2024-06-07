@@ -34,7 +34,7 @@
     - source: .github/workflows/build-and-test.yaml
       dest: .github/workflows/build-and-test-daily.yaml
       pre-commands: |
-        sd 'name: build-and-test' 'name: build-and-test-daily:' {source}
+        sd 'name: build-and-test' 'name: build-and-test-daily' {source}
         sd 'on:\n  push:' 'on:' {source}
         sd '  build-and-test:' '  build-and-test-daily:' {source}
         sd 'runs-on: ubuntu-latest' 'runs-on: [self-hosted, linux, X64]' {source}
@@ -44,7 +44,7 @@
     - source: .github/workflows/build-and-test.yaml
       dest: .github/workflows/build-and-test-daily-arm64.yaml
       pre-commands: |
-        sd 'name: build-and-test' 'name: build-and-test-daily-arm64:' {source}
+        sd 'name: build-and-test' 'name: build-and-test-daily-arm64' {source}
         sd 'on:\n  push:' 'on:' {source}
         sd '  build-and-test:' '  build-and-test-daily-arm64:' {source}
         sd 'runs-on: ubuntu-latest' 'runs-on: [self-hosted, linux, ARM64]' {source}
